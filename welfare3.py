@@ -7,11 +7,11 @@ def Slider():
         if(count >= len(text)):
             count = 0
             sliderWords = ''
-        sliderWords += text[count]
+        sliderWords += text[count]                   
         count += 1
         global l1
         l1.configure(text=sliderWords)       
-        l1.after(200,Slider)  
+        l1.after(200,Slider)                         
 start=0
 def intermidiate(): 
       fa.destroy()
@@ -41,10 +41,11 @@ def exp():
 root=Tk()
 root.geometry("1245x670")
 root.resizable(width=FALSE, height=FALSE)
+root.title("Typing speed test")   
 #root.minsize(1090,670)
 #root.maxsize(1090,670)
-root.iconbitmap("E:/CoolIcons/logo.ico")   
-root.title("Typing speed test")
+#root.iconbitmap("E:/CoolIcons/logo.ico")   
+
 def firstpage():
     global fa
     fa= Frame(root)
@@ -79,7 +80,8 @@ def secondpage():
          global wordintry
          wordintry=Entry(f2,font= "comic  20 bold",justify="center",relief=SUNKEN,borderwidth=10)   
          wordintry.pack(padx=50,pady=30)
-         wordintry.focus_set()   #this is for entering string without any key
+         wordintry.focus_set()  
+          #this is for entering string without any key
 ############################################set backgroung pic
     #bg=PhotoImage(file="background3.png")
     #my_lable= Label(f2, image=bg)
@@ -110,7 +112,6 @@ def secondpage():
         end=time.time()
         total=end-start
         string=str(total)
-    ############   label for showing time 
         string2=wordintry.get()
         length=len(string2)
         wpm=(60*length)/(5*total)
@@ -152,18 +153,18 @@ def secondpage():
     button112=Button(root,text=" EXIT ",font="comic  20 bold",bg="red",fg="yellow",command=root.destroy,relief=GROOVE,borderwidth=10)
     button112.place(x=1000,y=600)
     ############################## beggen fun for start button 
-    def beggen():
+    def beggen(): 
          global l12
          l12.destroy()
          global l2,l4,l6,l8
          random.shuffle(word)
-         random.shuffle(word)
-         random.shuffle(word)
+   #      random.shuffle(word)
+     #    random.shuffle(word)
          random.shuffle(word)
          global stg1
          stg1=word[0]
 ################################  Restart button
-         button2=Button(f2,text="Restart",font="comic  30 bold",bg="red",fg="yellow",command=clear,relief=GROOVE,borderwidth=10)
+         button2=Button(f2,text="Restart",font="comic  30 bold",bg="red",fg="blue",command=clear,relief=GROOVE,borderwidth=10)
          button2.place(x=800,y=480)
          q=Label(f2,text='',bg="red")
          q.pack(side="left",pady=300)
